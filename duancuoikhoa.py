@@ -59,17 +59,9 @@ submitted = st.form_submit_button('Xác nhận')
     if submitted:
         st.balloons()
         st.header('Bạn đã chọn:')
-        bill_data = {
-            'Loại sản phẩm:': option_topic,
-            'Mã số:': option_code,
-            'Số lượng:': nums,
-            'Họ tên khách hàng:': name,
-            'Số điện thoại liên hệ:': phone,
-            'Địa chỉ giao hàng:': address
-        }
-    for x, y in bill_data.items():
-        st.write(f"{x} {y}")
-        st.markdown('**Cảm ơn bạn đã mua hàng tại Vương quốc Skibidi! Chúc quý khách NGON LUÔN!!!**')
+        for x, y in bill_data.items():
+            st.write(f"{x} {y}")
+            st.markdown('**Cảm ơn bạn đã mua hàng tại Vương quốc Skibidi! Chúc quý khách NGON LUÔN!!!**')
 
 print_bill = st.checkbox('In hoá đơn')
 if print_bill:
@@ -78,4 +70,5 @@ if print_bill:
         ans += str(x) + ' ' + str(bill[x]) + '\n'
 
     st.download_button('Tải hóa đơn về máy', ans, file_name='hoa_don.txt')
+
 
