@@ -61,7 +61,7 @@ with st.form('Đơn đặt hàng'):
         st.header('Bạn đã chọn:')
         for x, y in bill.items():
             st.write(f"{x} {y}")
-            st.markdown('**Cảm ơn bạn đã mua hàng tại Vương quốc Skibidi! Chúc quý khách NGON LUÔN!!!**')
+        st.markdown('**Cảm ơn bạn đã mua hàng tại Vương quốc Skibidi! Chúc quý khách NGON LUÔN!!!**')
 
 print_bill = st.checkbox('In hoá đơn')
 if print_bill:
@@ -70,6 +70,7 @@ if print_bill:
         ans += str(x) + ' ' + str(bill[x]) + '\n'
 
     st.download_button('Tải hóa đơn về máy', ans, file_name='hoa_don.txt')
+
 
 
 
