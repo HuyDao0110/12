@@ -5,9 +5,9 @@ with st.sidebar:
     st.title('Vương quốc Skibidi')
     st.header('Chào mừng bạn đến với Vương quốc Skibidi!')
     st.image('pic1.jpg') 
-    st.write('Chúng tôi chuyên bán các sản phẩm cực hot: Iphone 17 pro max, Lightstick J97, Kẹo rau củ Kera và nhựa HDPE.')
-    st.write(':house: Địa chỉ cửa hàng: Hoàn Long, Yên Mỹ, Hưng Yên')
-    st.write(':phone: Điện thoại liên hệ: 0123456789')
+    st.write('Chúng tôi chuyên bán các sản phẩm cực hot trong năm nay. Đảm bảo uy tín, chất lượng nhất thế giới.')
+    st.write(':house: Địa chỉ cửa hàng: Làng Lá')
+    st.write(':phone: Điện thoại liên hệ: 0981234231')
 
 st.title('Vương quốc Skibidi')
 coll, col2 = st.columns(2)
@@ -55,15 +55,18 @@ with st.form('Đơn đặt hàng'):
         'Địa chỉ giao hàng:': address
     }
     
-    submitted = st.form_submit_button('Xác nhận')
+submitted = st.form_submit_button('Xác nhận')
     if submitted:
+        st.balloons()
         st.header('Bạn đã chọn:')
         for x, y in bill.items():
             st.write(x, y)
+        st.markdown('**Cảm ơn bạn đã mua hàng tại Vương quốc Skibidi! Chúc quý khách NGON LUÔN!!!**')
 
 print_bill = st.checkbox('In hoá đơn')
 if print_bill:
     ans = ''
     for x in bill:
         ans += str(x) + ' ' + str(bill[x]) + '\n'
+
     st.download_button('Tải hóa đơn về máy', ans, file_name='hoa_don.txt')
